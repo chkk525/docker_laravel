@@ -10,5 +10,8 @@ FROM php:7-fpm
     pdo_mysql mysqli \
     zip 
  RUN curl -s http://getcomposer.org/installer | php && \
-     echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
-     mv composer.phar /usr/local/bin/composer \
+    echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
+    mv composer.phar /usr/local/bin/composer 
+ RUN composer global require "laravel/installer=~1.1" && \
+    echo "export PATH=~/.composer/vendor/bin:$PATH" >> ~/.bashrc &&\
+    source ~/.bashrca
