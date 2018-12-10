@@ -13,5 +13,5 @@ FROM php:7-fpm
     echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
     mv composer.phar /usr/local/bin/composer 
  RUN composer global require "laravel/installer=~1.1" && \
-    echo "export PATH=~/.composer/vendor/bin:$PATH" >> ~/.bashrc &&\
-    source ~/.bashrca
+    echo "export PATH=~/.composer/vendor/bin:$PATH" >> ~/.bashrc
+ RUN bash -c "source ~/.bashrc"
